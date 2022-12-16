@@ -8,12 +8,15 @@ import defaultCoverArt from "../assets/defaultCoverArt.jpg"
 
 const SongCard = ({song, activeSong, isPlaying, data, i}) => {
 
-  const handlePauseClick = () => {
+  const dispatch = useDispatch();
 
+  const handlePauseClick = () => {
+    dispatch(playPause(false))
   }
 
   const handlePlayClick = () => {
-
+    dispatch(setActiveSong({song, data, i}))
+    dispatch(playPause(true))
   }
 
 
