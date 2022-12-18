@@ -12,8 +12,11 @@ const Navlinks = ({ handleClick }) => (
       <NavLink
         key={item.name}
         to={item.to}
-        className="flex flex-row justify-start items-center my-8 text-sm font-medium text-gray-100 hover:text-orange-400 active:text-orange-400"
+        className="flex flex-row justify-start items-center my-8 text-sm font-medium text-gray-100 hover:text-orange-400"
         onClick={() => handleClick && handleClick()}
+        style={({ isActive }) =>
+          isActive ? { color: "#fb923c" } : { color: "#f3f4f6" }
+        }
       >
         <item.icon className="w-6 h-6 mr-2" />
         {item.name}

@@ -32,9 +32,9 @@ const TopPlaysChart = ({
         <Link to={`/songs/${song?.key}`}>
           <p className="text-xl font-bold text-white">{song?.title}</p>
         </Link>
-        <Link to={`artists/${song?.artists[0]?.adamid}`}>
-          <p className="text-gray-400 text-base mt-1">{song?.subtitle}</p>
-        </Link>
+        {/* <Link to={`artists/${song?.artists[0]?.adamid}`}> */}
+        <p className="text-gray-400 text-base mt-1">{song?.subtitle}</p>
+        {/* </Link> */}
       </div>
     </div>
     <PlayPause
