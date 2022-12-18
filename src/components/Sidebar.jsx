@@ -12,10 +12,12 @@ const Navlinks = ({ handleClick }) => (
       <NavLink
         key={item.name}
         to={item.to}
-        className="flex flex-row justify-start items-center my-8 text-sm font-medium text-gray-100 hover:text-orange-400"
+        className="flex flex-row justify-start items-center my-1 px-8 py-4 text-sm font-medium text-gray-100 hover:text-orange-400 hover:bg-[#161f33]"
         onClick={() => handleClick && handleClick()}
         style={({ isActive }) =>
-          isActive ? { color: "#fb923c" } : { color: "#f3f4f6" }
+          isActive
+            ? { color: "#fb923c", backgroundColor: "#161f33" }
+            : { color: "#f3f4f6" }
         }
       >
         <item.icon className="w-6 h-6 mr-2" />
@@ -29,7 +31,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="md:flex hidden flex-col w-[240px] py-10 px-4 bg-gray-900">
+      <div className="md:flex hidden flex-col w-[240px] py-10  bg-gray-900">
         <NavLink to="/">
           <img
             src={logo}
