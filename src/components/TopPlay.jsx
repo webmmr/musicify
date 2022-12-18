@@ -26,15 +26,15 @@ const TopPlaysChart = ({
       <img
         src={song.images ? song.images.coverart : defaultCoverArt}
         alt={song?.title}
-        className="w-20 h-20 rounded-lg"
+        className="w-16 h-16 rounded-lg"
       />
       <div className="flex flex-1 flex-col justify-center mx-3">
         <Link to={`/songs/${song?.key}`}>
           <p className="text-xl font-bold text-white">{song?.title}</p>
         </Link>
-        {/* <Link to={`artists/${song?.artists[0]?.adamid}`}> */}
-        <p className="text-gray-400 text-base mt-1">{song?.subtitle}</p>
-        {/* </Link> */}
+        <Link to={`artists/${song?.artists[0]?.adamid}`}>
+          <p className="text-gray-400 text-base mt-1">{song?.subtitle}</p>
+        </Link>
       </div>
     </div>
     <PlayPause
@@ -57,7 +57,7 @@ const TopPlay = () => {
     divRef.current.scrollIntoView({ behavior: "smooth" });
   });
 
-  const topPlays = data?.slice(0, 6);
+  const topPlays = data?.slice(0, 5);
 
   const handlePauseClick = () => {
     dispatch(playPause(false));
@@ -73,10 +73,10 @@ const TopPlay = () => {
       className="xl:ml-6 ml-0 xl:mb-0 mb-6 flex-1 xl:max-w-[500px] max-w-full flex flex-col"
       ref={divRef}
     >
-      {/* To Song Charts */}
+      {/* Top Song Charts */}
       <div className="w-full flex flex-col">
         <div className="flex flex-row justify-between items-center">
-          <h2 className="text-white text-bold text-2xl">Top Charts</h2>
+          <h2 className="text-orange-400 text-bold text-2xl">Top Charts</h2>
           <Link to="/top-charts">
             <p className="text-base text-gray-300 cursor-pointer">See more</p>
           </Link>
@@ -99,7 +99,7 @@ const TopPlay = () => {
       {/* Top Artists */}
       <div className="w-full flex flex-col mt-8">
         <div className="flex flex-row justify-between items-center">
-          <h2 className="text-white text-bold text-2xl">Top Artists</h2>
+          <h2 className="text-orange-400 text-bold text-2xl">Top Artists</h2>
           <Link to="/top-artists">
             <p className="text-base text-gray-300 cursor-pointer">See more</p>
           </Link>
@@ -118,7 +118,7 @@ const TopPlay = () => {
         {topPlays?.map((song, i) => (
           <SwiperSlide
             key={song?.key}
-            style={{ width: "20%", height: "auto" }}
+            style={{ width: "17%", height: "auto" }}
             className="shadow-lg rounded-full animate-slideright"
           >
             {/* <Link to={`/artists/${song?.artists[0]?.adamid}`}> */}

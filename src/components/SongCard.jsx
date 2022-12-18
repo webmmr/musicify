@@ -19,8 +19,8 @@ const SongCard = ({ song, activeSong, isPlaying, data, i }) => {
   };
 
   return (
-    <div className="flex flex-col w-[250px] p-4 bg-white/5 bg-opacity-80 backdrop-blur animate-slideup rounded-lg">
-      <div className="relative w-full h-56 group">
+    <div className="flex flex-col w-[240px] p-4 bg-[#111827] bg-opacity-80  backdrop-blur animate-slideup rounded-lg">
+      <div className="relative w-full h-55 group">
         <div
           className={`absolute inset-0 justify-center items-center bg-black bg-opacity-50 group-hover:flex ${
             activeSong?.title === song.title
@@ -45,9 +45,9 @@ const SongCard = ({ song, activeSong, isPlaying, data, i }) => {
         <p className="text-lg font-semibold text-white truncate">
           <Link to={`/songs/${song.key}`}>{song.title}</Link>
         </p>
-        <p className="text-gray-100 truncate mt-1 text-sm">
-          {song?.subtitle}
-          {/* <Link
+        <p className="text-gray-400 truncate mt-1 text-sm">
+          {/* {song?.subtitle} */}
+          <Link
             to={
               song.artists
                 ? `/artists/${song?.artists[0]?.adamid}`
@@ -55,7 +55,7 @@ const SongCard = ({ song, activeSong, isPlaying, data, i }) => {
             }
           >
             {song.subtitle}
-          </Link> */}
+          </Link>
         </p>
       </div>
     </div>
